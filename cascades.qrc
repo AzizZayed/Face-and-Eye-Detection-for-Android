@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>haarcascade_eye.xml</file>
+        <file>haarcascade_eye_tree_eyeglasses.xml</file>
+        <file>haarcascade_frontalcatface.xml</file>
+        <file>haarcascade_frontalcatface_extended.xml</file>
+        <file>haarcascade_frontalface_alt.xml</file>
+        <file>haarcascade_frontalface_alt_tree.xml</file>
+        <file>haarcascade_frontalface_alt2.xml</file>
+        <file>haarcascade_frontalface_default.xml</file>
+        <file>haarcascade_lefteye_2splits.xml</file>
+        <file>haarcascade_righteye_2splits.xml</file>
+        <file>haarcascade_smile.xml</file>
+    </qresource>
+</RCC>
