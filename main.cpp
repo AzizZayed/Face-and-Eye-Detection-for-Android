@@ -7,14 +7,8 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     FaceFeatureDetector detector;
-    QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
-    engine.load(url);
+
+    QQmlApplicationEngine engine("qrc:/main.qml");
 
     detector.start(engine.rootObjects().first()); //start processing
 

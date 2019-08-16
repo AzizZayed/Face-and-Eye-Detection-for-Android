@@ -1,11 +1,8 @@
 #ifndef FACEFEATUREDETECTOR_H
 #define FACEFEATUREDETECTOR_H
 
-#include <QtCore>
-#include <QtGui>
 #include <QtQuick>
 #include <opencv2/opencv.hpp>
-#include <opencv2/core/core.hpp>
 
 class FaceFeatureDetector : public QObject
 {
@@ -13,8 +10,6 @@ class FaceFeatureDetector : public QObject
 public:
     explicit FaceFeatureDetector(QObject *parent = nullptr);
     void start(QObject *qmlObj);
-
-public slots:
     void grab();
 
 private slots:
@@ -22,11 +17,13 @@ private slots:
 
 private:
     QObject *qmlObject;
+
+    cv::CascadeClassifier faceClassifier;
+    cv::CascadeClassifier eyeClassifier;
+
     QRect face = QRect(0, 0, 0, 0);
     QRect rightEye = QRect(0, 0, 0, 0);
     QRect leftEye = QRect(0, 0, 0, 0);
-    cv::CascadeClassifier faceClassifier;
-    cv::CascadeClassifier eyeClassifier;
 };
 
 #endif // FACEFEATUREDETECTOR_H

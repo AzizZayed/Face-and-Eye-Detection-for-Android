@@ -77,14 +77,14 @@ void FaceFeatureDetector::frameReady(const QVariant &frameVariant) {
 
     //detecting faces and drawing:
     std::vector<cv::Rect> cvfaces, cvfaceeyes;
-    faceClassifier.detectMultiScale(img, cvfaces); //magic
+    faceClassifier.detectMultiScale(img, cvfaces, 1.1, 3, cv::CASCADE_DO_ROUGH_SEARCH | cv::CASCADE_FIND_BIGGEST_OBJECT); //magic
 
     //process faces and eyes
     if (cvfaces.size() >= 1) {
         cv::Rect cvface = cvfaces[0];
         face = QRect(cvface.x, cvface.y, cvface.width, cvface.height);
         cv::Mat faceImg = img(cvface);
-        eyeClassifier.detectMultiScale(faceImg, cvfaceeyes);
+        eyeClassifier.detectMultiScale(faceImg, cvfaceeyes, 1.1, 3, cv::CASCADE_DO_ROUGH_SEARCH); //more magic
 
         if (cvfaceeyes.size() >= 2) {
             std::sort(cvfaceeyes.begin(), cvfaceeyes.end(), [](const cv::Rect& a, const cv::Rect& b) {

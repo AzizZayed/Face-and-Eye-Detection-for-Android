@@ -6,8 +6,8 @@ import QtQuick.Controls 2.12
 Window {
     visible: true
     color: "white"
-    width: 1080
-    height: 2280
+    width: 1080 //change for your screen
+    height: 2280 //change for your screen
 
     property int w: 240 // camera resolution width
     property int h: 320 // camera resolution height
@@ -55,7 +55,7 @@ Window {
         id: rectFace
         x: face.x * sc
         y: face.y * sc
-//        radius: (face.width + face.height) * sc / 4.0 //this is to make it a circle if wanted
+        //        radius: (face.width + face.height) * sc / 4.0 //this is to make it a circle if wanted
         width: face.width * sc
         height: face.height * sc
         color: "transparent"
@@ -114,7 +114,7 @@ Window {
 
     //button to toggle visibility of the viewfinder
     Button {
-        id:visibilityButton
+        id: visibilityButton
         width: 500
         height: 150
 
