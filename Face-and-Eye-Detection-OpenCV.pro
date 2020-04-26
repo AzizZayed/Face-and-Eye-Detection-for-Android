@@ -1,4 +1,4 @@
-QT += quick core gui
+QT += quick core
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -32,7 +32,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 ######################################### INCLUDING OPENCV ###########################################
 ## This project is pre-configured with these kits: arm64-v8a, armeabi-v7a, minGW 64-bit, MSVC2017 64bit, UWP 64bit (all downloaded with Qt)
-OPENCV_ANDROID = C:/openCV/OpenCV-4.0.1-android-sdk ##This must be changed to where YOU put OpenCV
+OPENCV_ANDROID = E:/openCV/OpenCV-4.0.1-android-sdk ##This must be changed to where YOU put OpenCV
 TARGET_ARCHITECTURE = arm64-v8a ##This should also change if you are working on a different architecture like armeabi-v7a
 android {
     contains(ANDROID_TARGET_ARCH, $$TARGET_ARCHITECTURE) {
